@@ -43,8 +43,8 @@ module tt_um_secB_B15_array_multiplier (
 endmodule
 
 
-module array_mult_structural (
-    input [3:0] m,
-    input [3:0] q,
-    output reg [7:0] p
-);
+//module array_mult_structural (
+//   input [3:0] m,
+//    input [3:0] q,
+//    output reg [7:0] p
+//);
