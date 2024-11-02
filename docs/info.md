@@ -11,56 +11,73 @@ You can also include images in this folder and reference them in the markdown. E
 
 
 ```mermaid
-graph TD
-    %% Input Bits
-    A3["A3 (Most Significant Bit of A)"]
+graph TB
+    %% Input Bits and Partial Products by Rows (Q0, Q1, Q2, Q3)
+    A3["A3"]
     A2["A2"]
     A1["A1"]
-    A0["A0 (Least Significant Bit of A)"]
+    A0["A0"]
 
-    B3["B3 (Most Significant Bit of B)"]
+    B3["B3"]
     B2["B2"]
     B1["B1"]
-    B0["B0 (Least Significant Bit of B)"]
+    B0["B0"]
 
-    %% Partial Products (AND Gates labeled as M0, M1, M2, M3)
-    A3 --> |"AND with B3"| M3_3["M3_3 (A3 * B3)"]
-    A2 --> |"AND with B3"| M2_3["M2_3 (A2 * B3)"]
-    A1 --> |"AND with B3"| M1_3["M1_3 (A1 * B3)"]
-    A0 --> |"AND with B3"| M0_3["M0_3 (A0 * B3)"]
+    %% Row Q0 (A * B0)
+    A3 --> |"AND with B0"| Q0_3["Q0_3 (A3 * B0)"]
+    A2 --> |"AND with B0"| Q0_2["Q0_2 (A2 * B0)"]
+    A1 --> |"AND with B0"| Q0_1["Q0_1 (A1 * B0)"]
+    A0 --> |"AND with B0"| Q0_0["Q0_0 (A0 * B0)"]
 
-    A3 --> |"AND with B2"| M3_2["M3_2 (A3 * B2)"]
-    A2 --> |"AND with B2"| M2_2["M2_2 (A2 * B2)"]
-    A1 --> |"AND with B2"| M1_2["M1_2 (A1 * B2)"]
-    A0 --> |"AND with B2"| M0_2["M0_2 (A0 * B2)"]
+    %% Row Q1 (A * B1)
+    A3 --> |"AND with B1"| Q1_3["Q1_3 (A3 * B1)"]
+    A2 --> |"AND with B1"| Q1_2["Q1_2 (A2 * B1)"]
+    A1 --> |"AND with B1"| Q1_1["Q1_1 (A1 * B1)"]
+    A0 --> |"AND with B1"| Q1_0["Q1_0 (A0 * B1)"]
 
-    A3 --> |"AND with B1"| M3_1["M3_1 (A3 * B1)"]
-    A2 --> |"AND with B1"| M2_1["M2_1 (A2 * B1)"]
-    A1 --> |"AND with B1"| M1_1["M1_1 (A1 * B1)"]
-    A0 --> |"AND with B1"| M0_1["M0_1 (A0 * B1)"]
+    %% Row Q2 (A * B2)
+    A3 --> |"AND with B2"| Q2_3["Q2_3 (A3 * B2)"]
+    A2 --> |"AND with B2"| Q2_2["Q2_2 (A2 * B2)"]
+    A1 --> |"AND with B2"| Q2_1["Q2_1 (A1 * B2)"]
+    A0 --> |"AND with B2"| Q2_0["Q2_0 (A0 * B2)"]
 
-    A3 --> |"AND with B0"| M3_0["M3_0 (A3 * B0)"]
-    A2 --> |"AND with B0"| M2_0["M2_0 (A2 * B0)"]
-    A1 --> |"AND with B0"| M1_0["M1_0 (A1 * B0)"]
-    A0 --> |"AND with B0"| M0_0["M0_0 (A0 * B0)"]
+    %% Row Q3 (A * B3)
+    A3 --> |"AND with B3"| Q3_3["Q3_3 (A3 * B3)"]
+    A2 --> |"AND with B3"| Q3_2["Q3_2 (A2 * B3)"]
+    A1 --> |"AND with B3"| Q3_1["Q3_1 (A1 * B3)"]
+    A0 --> |"AND with B3"| Q3_0["Q3_0 (A0 * B3)"]
 
-    %% Full Adders in Sum Stages
-    M0_0 --> FA1["Full Adder Stage 1"]
-    M1_0 --> FA1
-    M0_1 --> FA1
+    %% Full Adders to Sum Partial Products
+    Q0_0 --> P0["P0"]
+    Q0_1 --> FA1["Full Adder 1"]
+    Q1_0 --> FA1
+    FA1 --> P1["P1"]
 
-    FA1 --> FA2["Full Adder Stage 2"]
-    M2_0 --> FA2
-    M1_1 --> FA2
-    M0_2 --> FA2
+    Q0_2 --> FA2["Full Adder 2"]
+    Q1_1 --> FA2
+    Q2_0 --> FA2
+    FA2 --> P2["P2"]
 
-    FA2 --> FA3["Full Adder Stage 3"]
-    M3_0 --> FA3
-    M2_1 --> FA3
-    M1_2 --> FA3
-    M0_3 --> FA3
+    Q0_3 --> FA3["Full Adder 3"]
+    Q1_2 --> FA3
+    Q2_1 --> FA3
+    Q3_0 --> FA3
+    FA3 --> P3["P3"]
 
-    FA3 --> Output["Final Output (8 bits)"]
+    Q1_3 --> FA4["Full Adder 4"]
+    Q2_2 --> FA4
+    Q3_1 --> FA4
+    FA4 --> P4["P4"]
+
+    Q2_3 --> FA5["Full Adder 5"]
+    Q3_2 --> FA5
+    FA5 --> P5["P5"]
+
+    Q3_3 --> FA6["Full Adder 6"]
+    FA6 --> P6["P6"]
+
+    FA6 --> P7["P7 (Most Significant Bit)"]
+
 
 ```
 
