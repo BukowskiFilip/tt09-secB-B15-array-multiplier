@@ -137,26 +137,27 @@ graph TD
 
 ```mermaid
 graph TD
-    %A[Input A (a3, a2, a1, a0)] 
-    %B[Input B (b3, b2, b1, b0)]
+    A[Input X (x3, x2, x1, x0)] 
+    B[Input Y (y3, y2, y1, y0)]
     
-    A -->|AND| P0[Partial Product P0]
-    A -->|AND| P1[Partial Product P1]
-    A -->|AND| P2[Partial Product P2]
-    A -->|AND| P3[Partial Product P3]
+    A -->|AND| PP0[Partial Product PP0]
+    A -->|AND| PP1[Partial Product PP1]
+    A -->|AND| PP2[Partial Product PP2]
+    A -->|AND| PP3[Partial Product PP3]
     
-    B -->|b0| P0
-    B -->|b1| P1
-    B -->|b2| P2
-    B -->|b3| P3
+    B -->|y0| PP0
+    B -->|y1| PP1
+    B -->|y2| PP2
+    B -->|y3| PP3
     
-    P0 -->|Shift 0| S1[Intermediate Sum]
-    P1 -->|Shift 1| S1
-    P2 -->|Shift 2| S2[Next Sum]
-    P3 -->|Shift 3| S2
+    PP0 -->|Shift 0| S1[Sum Stage 1]
+    PP1 -->|Shift 1| S1
+    PP2 -->|Shift 2| S2[Sum Stage 2]
+    PP3 -->|Shift 3| S2
     
     S1 --> Final[Final Result]
     S2 --> Final
+
 
 
 ```
