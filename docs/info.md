@@ -136,27 +136,24 @@ graph TD
 
 
 ```mermaid
-graph TD
-    A[Input X (x3, x2, x1, x0)] 
-    B[Input Y (y3, y2, y1, y0)]
-    
-    A -->|AND| PP0[Partial Product PP0]
-    A -->|AND| PP1[Partial Product PP1]
-    A -->|AND| PP2[Partial Product PP2]
-    A -->|AND| PP3[Partial Product PP3]
-    
-    B -->|y0| PP0
-    B -->|y1| PP1
-    B -->|y2| PP2
-    B -->|y3| PP3
-    
-    PP0 -->|Shift 0| S1[Sum Stage 1]
-    PP1 -->|Shift 1| S1
-    PP2 -->|Shift 2| S2[Sum Stage 2]
-    PP3 -->|Shift 3| S2
-    
-    S1 --> Final[Final Result]
-    S2 --> Final
+flowchart TD
+    A["Input X (x3, x2, x1, x0)"] -->|AND| PP0["PP0"];
+    A -->|AND| PP1["PP1"];
+    A -->|AND| PP2["PP2"];
+    A -->|AND| PP3["PP3"];
+
+    B["Input Y (y3, y2, y1, y0)"] -->|y0| PP0;
+    B -->|y1| PP1;
+    B -->|y2| PP2;
+    B -->|y3| PP3;
+
+    PP0 --> S1["Sum Stage"];
+    PP1 --> S1;
+    PP2 --> S2["Next Sum Stage"];
+    PP3 --> S2;
+
+    S1 --> Final["Final Result"];
+    S2 --> Final;
 
 
 
