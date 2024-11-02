@@ -135,7 +135,7 @@ graph TD
 
 
 
-
+```mermaid
 graph TD
     A[Input X (x3, x2, x1, x0)] 
     B[Input Y (y3, y2, y1, y0)]
