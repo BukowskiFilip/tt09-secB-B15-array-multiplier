@@ -64,7 +64,7 @@ graph TD
     Q3_1 --- Q3_2
     Q3_2 --- Q3_3
 
-    %% Sum Stages with Full Adders and Final Outputs
+
     %% Full Adder Stage 1 (P0)
     Q0_0 --> P0["P0 (Least Significant Bit of Product)"]:::output
 
