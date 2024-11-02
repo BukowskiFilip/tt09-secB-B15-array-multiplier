@@ -10,7 +10,7 @@ You can also include images in this folder and reference them in the markdown. E
 
 
 
-![4x4 Array Multiplier Model](docs/4x4%20Array%20Multiplier%20Model%20(detailed).png)
+![4x4 Array Multiplier Model](docs/4x420Array20Multiplier20Model20(detailed).png)
 
 
 
