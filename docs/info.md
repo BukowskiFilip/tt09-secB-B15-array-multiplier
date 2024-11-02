@@ -137,6 +137,16 @@ graph TD
 
 ```mermaid
 flowchart TD
+    style A fill:#ffffff,stroke:#000000,color:#000000
+    style B fill:#ffffff,stroke:#000000,color:#000000
+    style PP0 fill:#ffffff,stroke:#000000,color:#000000
+    style PP1 fill:#ffffff,stroke:#000000,color:#000000
+    style PP2 fill:#ffffff,stroke:#000000,color:#000000
+    style PP3 fill:#ffffff,stroke:#000000,color:#000000
+    style S1 fill:#ffffff,stroke:#000000,color:#000000
+    style S2 fill:#ffffff,stroke:#000000,color:#000000
+    style Final fill:#ffffff,stroke:#000000,color:#000000
+
     A["Input X (x3, x2, x1, x0)"] -->|AND| PP0["PP0"];
     A -->|AND| PP1["PP1"];
     A -->|AND| PP2["PP2"];
