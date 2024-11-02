@@ -136,7 +136,6 @@ graph TD
 
 
 ```mermaid
-
 graph TD
     A[Input A (a3, a2, a1, a0)] 
     B[Input B (b3, b2, b1, b0)]
@@ -146,10 +145,10 @@ graph TD
     A -->|AND| P2[Partial Product P2]
     A -->|AND| P3[Partial Product P3]
     
-    B --> P0
-    B --> P1
-    B --> P2
-    B --> P3
+    B -->|b0| P0
+    B -->|b1| P1
+    B -->|b2| P2
+    B -->|b3| P3
     
     P0 -->|Shift 0| S1[Intermediate Sum]
     P1 -->|Shift 1| S1
@@ -158,6 +157,7 @@ graph TD
     
     S1 --> Final[Final Result]
     S2 --> Final
+
 
 ```
 
