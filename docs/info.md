@@ -9,7 +9,8 @@ You can also include images in this folder and reference them in the markdown. E
 
 
 
-![4x4 Array Multiplier Model] (docs/4x4 Array Multiplier Model (detailed).png)
+![4x4 Array Multiplier Model (simple)](https://github.com/user-attachments/assets/139684a1-ae21-4b4b-bddd-d2fda527988e)
+
 
 
 
