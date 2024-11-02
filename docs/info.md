@@ -11,14 +11,6 @@ You can also include images in this folder and reference them in the markdown. E
 
 
 ```mermaid
-  info
-```
-
-
-
-# 4x4 Array Multiplier
-
-```mermaid
 graph TD
     A3["A3"] --> |"AND"| P3_3["P3_3 (A3 * B3)"]
     A2["A2"] --> |"AND"| P2_3["P2_3 (A2 * B3)"]
@@ -46,7 +38,29 @@ graph TD
     P0_3 --> S0
 
     S3 --> Output["Final Output (8 bits)"]
-'''
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## How it works
