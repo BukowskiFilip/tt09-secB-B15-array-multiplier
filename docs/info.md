@@ -104,10 +104,10 @@ graph TD
     FA6 --> P7["P7 (Most Significant Bit of Product)"]
 
     %% Style Definitions
-    classDef fa fill:#cce5ff, stroke:#004085, stroke-width:2px;
-    classDef input fill:#d4edda, stroke:#155724, stroke-width:2px;
-    classDef product fill:#fff3cd, stroke:#856404, stroke-width:2px;
-    classDef output fill:#f8d7da, stroke:#721c24, stroke-width:2px;
+    classDef fa fill:#cce5ff, stroke:#004085, stroke-width:2px, color:#000000;
+    classDef input fill:#d4edda, stroke:#155724, stroke-width:2px, color:#000000;
+    classDef product fill:#fff3cd, stroke:#856404, stroke-width:2px, color:#000000;
+    classDef output fill:#f8d7da, stroke:#721c24, stroke-width:2px, color:#000000;
 
     %% Apply styles to nodes
     class A3,A2,A1,A0 input;
