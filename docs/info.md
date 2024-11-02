@@ -46,6 +46,7 @@ graph TD
     P0_3 --> S0
 
     S3 --> Output["Final Output (8 bits)"]
+'''
 
 
 ## How it works
