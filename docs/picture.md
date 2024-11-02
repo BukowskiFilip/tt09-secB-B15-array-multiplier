@@ -158,3 +158,74 @@ flowchart TD
 
 
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```mermaid
+flowchart TD
+    %% Input Bits for Clarity
+    X3["X3 (Most Significant Bit of X)"]:::input
+    X2["X2 (Second Bit of X)"]:::input
+    X1["X1 (Third Bit of X)"]:::input
+    X0["X0 (Least Significant Bit of X)"]:::input
+
+    Y3["Y3 (Most Significant Bit of Y)"]:::input
+    Y2["Y2 (Second Bit of Y)"]:::input
+    Y1["Y1 (Third Bit of Y)"]:::input
+    Y0["Y0 (Least Significant Bit of Y)"]:::input
+
+    %% Partial Products for X * Y
+    X3 --> |"AND with Y0"| PP0["Partial Product 0: X3 AND Y0"]:::product
+    X2 --> |"AND with Y1"| PP1["Partial Product 1: X2 AND Y1"]:::product
+    X1 --> |"AND with Y2"| PP2["Partial Product 2: X1 AND Y2"]:::product
+    X0 --> |"AND with Y3"| PP3["Partial Product 3: X0 AND Y3"]:::product
+
+    Y3 --> |"AND with X0"| Q0["Partial Product 4: Y3 AND X0"]:::product
+    Y2 --> |"AND with X1"| Q1["Partial Product 5: Y2 AND X1"]:::product
+    Y1 --> |"AND with X2"| Q2["Partial Product 6: Y1 AND X2"]:::product
+    Y0 --> |"AND with X3"| Q3["Partial Product 7: Y0 AND X3"]:::product
+
+    %% Sum Stages with Full Adders and Final Outputs
+    %% Full Adder stage 1 (P0)
+    PP0 --> FullAdder0["Sum with Carry In: Partial Product 0"]:::fa
+    Q0 --> FullAdder0
+    FullAdder0 --> P0["P0 (Least Significant Bit of Product)"]:::output
+
+    %% Full Adder Stage 2 (P1)
+    PP1 --> FullAdder1["Sum with Carry In: Partial Product 1"]:::fa
+    Q1 --> FullAdder1
+    FullAdder1 --> P1["P1 (Second Bit of Product)"]:::output
+
+    %% Full Adder Stage 3 (P2)
+    PP2 --> FullAdder2["Sum with Carry In: Partial Product 2"]:::fa
+    Q2 --> FullAdder2
+    FullAdder2 --> P2["P2 (Third Bit of Product)"]:::output
+
+    %% Full Adder Stage 4 (P3)
+    PP3 --> FullAdder3["Sum with Carry In: Partial Product 3"]:::fa
+    Q3 --> FullAdder3
+    FullAdder3 --> P3["P3 (Fourth Bit of Product)"]:::output
+
+    %% Style Definitions
+    classDef fa fill:#cce5ff,stroke:#004085,stroke-width:2px,color:#000000
+    classDef input fill:#d4edda,stroke:#155724,stroke-width:2px,color:#000000
+    classDef product fill:#fff3cd,stroke:#856404,stroke-width:2px,color:#000000
+    classDef output fill:#f8d7da,stroke:#721c24,stroke-width:2px,color:#000000
+
+    %% Apply styles to nodes
+    class X3,X2,X1,X0,Y3,Y2,Y1,Y0 input
+    class PP0,PP1,PP2,PP3,Q0,Q1,Q2,Q3 product
+    class FullAdder0,FullAdder1,FullAdder2,FullAdder3 fa
+    class P0,P1,P2,P3 output
+```m
