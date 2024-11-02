@@ -11,7 +11,6 @@ You can also include images in this folder and reference them in the markdown. E
 
 
 ```mermaid
-
 graph TD
     %% Input Bits for Clarity
     A3["A3 (Most Significant Bit of A)"]:::input
@@ -109,8 +108,6 @@ graph TD
     classDef input fill:#d4edda, stroke:#155724, stroke-width:2px, color:#000000; /* Inputs */
     classDef product fill:#fff3cd, stroke:#856404, stroke-width:2px, color:#000000; /* Partial Products */
     classDef output fill:#f8d7da, stroke:#721c24, stroke-width:2px, color:#000000; /* Outputs */
-
-
 
 
 ```
