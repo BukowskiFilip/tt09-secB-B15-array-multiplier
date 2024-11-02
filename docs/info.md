@@ -137,8 +137,8 @@ graph TD
 
 ```mermaid
 graph TD
-    A[Input A (a3, a2, a1, a0)] 
-    B[Input B (b3, b2, b1, b0)]
+    %A[Input A (a3, a2, a1, a0)] 
+    %B[Input B (b3, b2, b1, b0)]
     
     A -->|AND| P0[Partial Product P0]
     A -->|AND| P1[Partial Product P1]
