@@ -13,41 +13,27 @@ You can also include images in this folder and reference them in the markdown. E
 ```mermaid
   info
 ```
-```topojson
-{
-  "type": "Topology",
-  "transform": {
-    "scale": [0.0005000500050005, 0.00010001000100010001],
-    "translate": [100, 0]
-  },
-  "objects": {
-    "example": {
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Point",
-          "properties": {"prop0": "value0"},
-          "coordinates": [4000, 5000]
-        },
-        {
-          "type": "LineString",
-          "properties": {"prop0": "value0", "prop1": 0},
-          "arcs": [0]
-        },
-        {
-          "type": "Polygon",
-          "properties": {"prop0": "value0",
-            "prop1": {"this": "that"}
-          },
-          "arcs": [[1]]
-        }
-      ]
-    }
-  },
-  "arcs": [[[4000, 0], [1999, 9999], [2000, -9999], [2000, 9999]],[[0, 0], [0, 9999], [2000, 0], [0, -9999], [-2000, 0]]]
-}
-```
 
+
+# 4x4 Array Multiplier
+
+```mermaid
+graph TD
+    A3["A3"] --> |"AND"| P3["P3"]
+    A2["A2"] --> |"AND"| P2["P2"]
+    A1["A1"] --> |"AND"| P1["P1"]
+    A0["A0"] --> |"AND"| P0["P0"]
+    
+    B3["B3"] --> P3
+    B2["B2"] --> P2
+    B1["B1"] --> P1
+    B0["B0"] --> P0
+    
+    P3 --> S3["Sum with P2"]
+    P2 --> S2["Sum with P1"]
+    P1 --> S1["Sum with P0"]
+    
+    S3 --> Output["Final Output (8 bits)"]
 
 
 ## How it works
