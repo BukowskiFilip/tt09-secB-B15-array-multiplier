@@ -124,6 +124,36 @@ graph TD
 
 
 
+```mermaid
+graph TD;
+    A[Input A (a3, a2, a1, a0)] -->|AND| P0[Partial Product P0 (A * b0)]
+    A -->|AND| P1[Partial Product P1 (A * b1 << 1)]
+    A -->|AND| P2[Partial Product P2 (A * b2 << 2)]
+    A -->|AND| P3[Partial Product P3 (A * b3 << 3)]
+    B[Input B (b3, b2, b1, b0)] --> P0
+    B --> P1
+    B --> P2
+    B --> P3
+    
+    P0 -->|Shift and Add| S1[Sum Stage 1]
+    P1 -->|Shift and Add| S1
+    P2 -->|Shift and Add| S2[Sum Stage 2]
+    P3 -->|Shift and Add| S2
+    
+    S1 --> Final[Final Result]
+    S2 --> Final
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
