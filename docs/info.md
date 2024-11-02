@@ -123,6 +123,11 @@ graph TD
 
 
 
+
+
+
+
+'''mermaid
 graph TD
     A[Input A (a3, a2, a1, a0)] 
     B[Input B (b3, b2, b1, b0)]
@@ -145,7 +150,7 @@ graph TD
     S1 --> Final[Final Result]
     S2 --> Final
 
-
+'''
 
 
 
