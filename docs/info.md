@@ -13,39 +13,39 @@ You can also include images in this folder and reference them in the markdown. E
 ```mermaid
 graph TD
     %% Input Bits for Clarity
-    A3["A3 (Most Significant Bit of A)"]
-    A2["A2 (Second Bit of A)"]
-    A1["A1 (Third Bit of A)"]
-    A0["A0 (Least Significant Bit of A)"]
+    X3["X3 (Most Significant Bit of X)"]
+    X2["X2 (Second Bit of X)"]
+    X1["X1 (Third Bit of X)"]
+    X0["X0 (Least Significant Bit of X)"]
 
-    B3["B3 (Most Significant Bit of B)"]
-    B2["B2 (Second Bit of B)"]
-    B1["B1 (Third Bit of B)"]
-    B0["B0 (Least Significant Bit of B)"]
+    Y3["Y3 (Most Significant Bit of Y)"]
+    Y2["Y2 (Second Bit of Y)"]
+    Y1["Y1 (Third Bit of Y)"]
+    Y0["Y0 (Least Significant Bit of Y)"]
 
-    %% Row Q0 (Partial Products of A * B0)
-    A3 --> |"AND with B0"| Q0_3["Q0_3 = A3 * B0"]
-    A2 --> |"AND with B0"| Q0_2["Q0_2 = A2 * B0"]
-    A1 --> |"AND with B0"| Q0_1["Q0_1 = A1 * B0"]
-    A0 --> |"AND with B0"| Q0_0["Q0_0 = A0 * B0"]
+    %% Row Q0 (Partial Products of X * Y0)
+    X3 --> |"AND with Y0"| Q0_3["Q0_3 = X3 * Y0"]
+    X2 --> |"AND with Y0"| Q0_2["Q0_2 = X2 * Y0"]
+    X1 --> |"AND with Y0"| Q0_1["Q0_1 = X1 * Y0"]
+    X0 --> |"AND with Y0"| Q0_0["Q0_0 = X0 * Y0"]
 
-    %% Row Q1 (Partial Products of A * B1)
-    A3 --> |"AND with B1"| Q1_3["Q1_3 = A3 * B1"]
-    A2 --> |"AND with B1"| Q1_2["Q1_2 = A2 * B1"]
-    A1 --> |"AND with B1"| Q1_1["Q1_1 = A1 * B1"]
-    A0 --> |"AND with B1"| Q1_0["Q1_0 = A0 * B1"]
+    %% Row Q1 (Partial Products of X * Y1)
+    X3 --> |"AND with Y1"| Q1_3["Q1_3 = X3 * Y1"]
+    X2 --> |"AND with Y1"| Q1_2["Q1_2 = X2 * Y1"]
+    X1 --> |"AND with Y1"| Q1_1["Q1_1 = X1 * Y1"]
+    X0 --> |"AND with Y1"| Q1_0["Q1_0 = X0 * Y1"]
 
-    %% Row Q2 (Partial Products of A * B2)
-    A3 --> |"AND with B2"| Q2_3["Q2_3 = A3 * B2"]
-    A2 --> |"AND with B2"| Q2_2["Q2_2 = A2 * B2"]
-    A1 --> |"AND with B2"| Q2_1["Q2_1 = A1 * B2"]
-    A0 --> |"AND with B2"| Q2_0["Q2_0 = A0 * B2"]
+    %% Row Q2 (Partial Products of X * Y2)
+    X3 --> |"AND with Y2"| Q2_3["Q2_3 = X3 * Y2"]
+    X2 --> |"AND with Y2"| Q2_2["Q2_2 = X2 * Y2"]
+    X1 --> |"AND with Y2"| Q2_1["Q2_1 = X1 * Y2"]
+    X0 --> |"AND with Y2"| Q2_0["Q2_0 = X0 * Y2"]
 
-    %% Row Q3 (Partial Products of A * B3)
-    A3 --> |"AND with B3"| Q3_3["Q3_3 = A3 * B3"]
-    A2 --> |"AND with B3"| Q3_2["Q3_2 = A2 * B3"]
-    A1 --> |"AND with B3"| Q3_1["Q3_1 = A1 * B3"]
-    A0 --> |"AND with B3"| Q3_0["Q3_0 = A0 * B3"]
+    %% Row Q3 (Partial Products of X * Y3)
+    X3 --> |"AND with Y3"| Q3_3["Q3_3 = X3 * Y3"]
+    X2 --> |"AND with Y3"| Q3_2["Q3_2 = X2 * Y3"]
+    X1 --> |"AND with Y3"| Q3_1["Q3_1 = X1 * Y3"]
+    X0 --> |"AND with Y3"| Q3_0["Q3_0 = X0 * Y3"]
 
     %% Add spacing between rows for visibility
     Q0_0 --- Q0_1
@@ -104,17 +104,19 @@ graph TD
     FA6 --> P7["P7 (Most Significant Bit of Product)"]
 
     %% Style Definitions
-    classDef fa fill:#cce5ff, stroke:#004085, stroke-width:2px, color:#000000;
-    classDef input fill:#d4edda, stroke:#155724, stroke-width:2px, color:#000000;
-    classDef product fill:#fff3cd, stroke:#856404, stroke-width:2px, color:#000000;
-    classDef output fill:#f8d7da, stroke:#721c24, stroke-width:2px, color:#000000;
+    classDef fa fill:#cce5ff, stroke:#004085, stroke-width:2px, color:#000000; /* Full Adders */
+    classDef input fill:#d4edda, stroke:#155724, stroke-width:2px, color:#000000; /* Inputs */
+    classDef product fill:#fff3cd, stroke:#856404, stroke-width:2px, color:#000000; /* Partial Products */
+    classDef output fill:#f8d7da, stroke:#721c24, stroke-width:2px, color:#000000; /* Outputs */
 
     %% Apply styles to nodes
-    class A3,A2,A1,A0 input;
-    class B3,B2,B1,B0 input;
+    class X3,X2,X1,X0 input;
+    class Y3,Y2,Y1,Y0 input;
     class Q0_0,Q0_1,Q0_2,Q0_3,Q1_0,Q1_1,Q1_2,Q1_3,Q2_0,Q2_1,Q2_2,Q2_3,Q3_0,Q3_1,Q3_2,Q3_3 product;
     class FA1,FA2,FA3,FA4,FA5,FA6 fa;
     class P0,P1,P2,P3,P4,P5,P6,P7 output;
+
+
 
 ```
 
